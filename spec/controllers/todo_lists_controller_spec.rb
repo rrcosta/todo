@@ -21,23 +21,33 @@ RSpec.describe TodoListsController, type: :controller do
     end
   end
 
+  describe "GET #new" do
+    let(:todo_list) { create(:todo_list) }
+
+    it 'returs a success response' do
+      get :new, params: { todo_list: { title: 'Test', description: 'Test' } }
+
+      expect(response).to be_successful
+    end
+  end
+
   describe "POST #create" do
     context "with valid params" do
       it "creates a new TodoList" do
         expect {
-          post :create, format: :json, params: {
+          post :create, format: :json,
+                params: {
                           todo_list: { title: 'Test', description: 'Test' }
                         }
         }.to change(TodoList, :count).by(1)
       end
 
-      it "renders a JSON response with the new todo_list" do
+      it "renders response with the new todo_list" do
 
         post :create, params: {
                                 todo_list: { title: 'Test', description: 'Test'}
                               }
 
-        # expect(response).to have_http_status(:created)
         expect(response.content_type).to eq('text/html')
         expect(response.location).to eq(todo_list_url(TodoList.last))
       end
