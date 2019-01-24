@@ -23,6 +23,7 @@ group :development, :test do
   gem 'simplecov'
   gem 'factory_bot_rails'
   gem 'faker'
+  gem 'shoulda-matchers', '4.0.0.rc1'
 end
 
 group :development do
