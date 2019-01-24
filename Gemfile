@@ -20,7 +20,7 @@ group :development, :test do
   gem 'pry-byebug'
   gem 'dotenv-rails'
   gem 'rspec-rails', '~> 3.5'
-  gem 'simplecov'
+  gem 'factory_bot_rails'
 end
 
 group :development do
