@@ -21,6 +21,11 @@ group :development, :test do
   gem 'dotenv-rails'
   gem 'rspec-rails', '~> 3.5'
   gem 'simplecov'
+  gem 'factory_bot_rails'
+  gem 'faker'
+  gem 'shoulda-matchers', '4.0.0.rc1'
+  gem 'rails-controller-testing'
+  gem 'rack_session_access'
 end
 
 group :development do
