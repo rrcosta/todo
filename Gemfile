@@ -21,6 +21,7 @@ group :development, :test do
   gem 'dotenv-rails'
   gem 'rspec-rails', '~> 3.5'
   gem 'factory_bot_rails'
+  gem 'faker'
 end
 
 group :development do
