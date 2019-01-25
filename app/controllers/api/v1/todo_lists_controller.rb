@@ -1,7 +1,7 @@
 module Api
   module V1
     class TodoListsController < ApplicationController
-      before_action :set_todo_list, only: [:show, :create]
+      before_action :set_todo_list, only: [:show, :edit, :update, :destroy]
       skip_before_action :verify_authenticity_token
 
       # GET /todo_lists
@@ -20,16 +20,19 @@ module Api
         @todo_list = TodoList.new
       end
 
-      # POST /todo_lists
-      def create
-        todo_list = TodoList.new(todo_list_params)
+      # GET /todo_lists/1/edit
+      def edit
+      end
 
-        
-        if !todo_list.save
-          render :show, status: :created, location: @todo_list
+      # PATCH/PUT /todo_lists/1
+      # PATCH/PUT /todo_lists/1.json
+      def update
+        if @todo_list.update(todo_list_params)
+          # render :show, status: :ok, location: @todo_list
+          render json: @todo_list, status: :ok
         else
           render json: @todo_list.errors, status: :unprocessable_entity
-        end        
+        end
       end
 
       private
