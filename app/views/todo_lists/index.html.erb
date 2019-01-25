@@ -2,7 +2,9 @@
 
 <h1>Itens</h1><br>
 
-  <% if @todo_lists.any? %>  
+  <% if @todo_lists.blank? %>  
+    <%= render 'no_todo_list' %> <br>
+  <% else %>
     <table>
       <thead>
         <tr>
@@ -26,8 +28,6 @@
         <% end %>
       </tbody>
     </table>
-  <% else %>
-    <%= render 'no_todo_list' %> <br>
   <% end %>
 <br>
 
