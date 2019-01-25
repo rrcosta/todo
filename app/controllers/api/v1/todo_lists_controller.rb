@@ -22,15 +22,14 @@ module Api
 
       # POST /todo_lists
       def create
-        @todo_list = TodoList.new(todo_list_params)
+        todo_list = TodoList.new(todo_list_params)
 
-        respond_to do |format|
-          if @todo_list.save
-            format.json { render :show, status: :created, location: @todo_list }
-          else
-            format.json { render json: @todo_list.errors, status: :unprocessable_entity }
-          end
-        end
+        
+        if !todo_list.save
+          render :show, status: :created, location: @todo_list
+        else
+          render json: @todo_list.errors, status: :unprocessable_entity
+        end        
       end
 
       private
