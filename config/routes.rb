@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   namespace :api, constraints: { format: 'json' } do
     namespace :v1 do
-      resources :todo_lists, only: [:index, :show, :new, :edit, :update]
+      resources :todo_lists
     end
   end
 end

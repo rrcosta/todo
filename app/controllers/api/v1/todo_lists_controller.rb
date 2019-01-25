@@ -28,7 +28,26 @@ module Api
       # PATCH/PUT /todo_lists/1.json
       def update
         if @todo_list.update(todo_list_params)
-          # render :show, status: :ok, location: @todo_list
+          render json: @todo_list, status: :ok
+        else
+          render json: @todo_list.errors, status: :unprocessable_entity
+        end
+      end
+
+      # DELETE /todo_lists/1
+      # DELETE /todo_lists/1.json
+      def destroy
+        if @todo_list.destroy
+          head :no_content
+        end
+      end
+
+      # POST /todo_lists
+      # POST /todo_lists.json
+      def create
+        @todo_list = TodoList.new(todo_list_params)
+
+        if @todo_list.save
           render json: @todo_list, status: :ok
         else
           render json: @todo_list.errors, status: :unprocessable_entity
