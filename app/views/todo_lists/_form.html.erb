@@ -1,32 +1,19 @@
-<%= form_with(model: todo_list, local: true) do |form| %>
-  <% if todo_list.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(todo_list.errors.count, "error") %> prohibited this todo_list from being saved:</h2>
 
-      <ul>
-      <% todo_list.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+<%= simple_form_for @todo_list, html: { class: 'ui form' } do |f| %>
+  <%= f.input :title %>
+  <br>
+  <%= f.input :description %>
+  <br>
+  <div>
+    Completado?
 
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
+    <%= f.input :status,
+          label: false,
+          input_html: { class: 'ui checkbox' }
+    %>
   </div>
-
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_area :description %>
-  </div>
-
-  <div class="field">
-    <%= form.label :status %>
-    <%= form.check_box :status %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+  <br>
+  <%= f.submit 'Salvar item', class: 'ui primary button' %>
+  <%= link_to 'Cancelar item', todo_lists_path, class: 'ui basic grey button' %>
 <% end %>
+<br>

@@ -33,5 +33,8 @@ SimpleForm.setup do |config|
 
   config.browser_validations = false
 
-  config.boolean_label_class = 'checkbox'
+  # You can define a class to use in all item wrappers. Defaulting to none.
+  config.item_wrapper_class = 'ui checkbox invoice_radio_button'
+
+  config.boolean_label_class = 'checkbox'  
 end

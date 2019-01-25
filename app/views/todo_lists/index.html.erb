@@ -1,8 +1,8 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Todo Lists</h1><br>
+<h1>Itens</h1><br>
 
-  <% if @todo_lists.orders.any? %>
+  <% if @todo_lists.any? %>
     <table>
       <thead>
         <tr>
@@ -31,4 +31,4 @@
   <% end %>
 <br>
 
-<%= link_to 'New Todo List', new_todo_list_path %>
+<%= link_to 'Novo Item', new_todo_list_path %>
