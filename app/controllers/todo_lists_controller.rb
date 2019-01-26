@@ -7,6 +7,14 @@ class TodoListsController < ApplicationController
     @todo_lists = TodoList.all
   end
 
+  def pending
+    @todo_lists = TodoList.all.pending
+  end
+
+  def completed
+    @todo_lists = TodoList.all.completed
+  end
+
   # GET /todo_lists/1
   # GET /todo_lists/1.json
   def show

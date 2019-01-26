@@ -10,6 +10,14 @@ module Api
         render json: @todo_lists
       end
 
+      def todo_pending
+        render json: TodoList.all.pending, status: :ok
+      end
+
+      def todo_completed
+        render json: TodoList.all.completed, status: :ok
+      end
+
       # GET /todo_lists/1
       def show
         render json: @todo_list
