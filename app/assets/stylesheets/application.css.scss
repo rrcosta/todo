@@ -1,1 +1,8 @@
 @import 'semantic-ui';
+
+
+.truncate {
+	max-width: 220px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
