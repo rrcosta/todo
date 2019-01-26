@@ -1,19 +1,27 @@
-<p id="notice"><%= notice %></p>
+<br>
+<div class="ui two column grid">
+  <div class="column">
+    <div class="ui raised segment">
+      <% if @todo_list.status %>
+        <a class="ui teal ribbon label">Concluido</a>
+      <% else %>
+        <a class="ui red ribbon label">Pendente</a>
+      <% end %>
+      <p></p>
+      <span>
+        <p><strong>Tarefa:</strong></p>
+        <%= @todo_list.title %>
+      </span>
+      <p></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @todo_list.title %>
-</p>
+      <span>
+        <p><strong>Descrição:</strong></p>
+        <%= @todo_list.description %>
+      </span>
+    </div>
+  </div>
+</div>
 
-<p>
-  <strong>Description:</strong>
-  <%= @todo_list.description %>
-</p>
-
-<p>
-  <strong>Status:</strong>
-  <%= @todo_list.status %>
-</p>
-
-<%= link_to 'Edit', edit_todo_list_path(@todo_list) %> |
-<%= link_to 'Back', todo_lists_path %>
+<br>
+<%= link_to 'Editar', edit_todo_list_path(@todo_list) %> |
+<%= link_to 'Voltar', todo_lists_path %>
