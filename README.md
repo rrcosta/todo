@@ -11,9 +11,9 @@ API). (ex: GET, PUT, POST, DELETE /todo)
 Informações sobre a API:
 
 * Toda tarefa deve possuir um status (pending ou completed)
-* A API deve persistir os dados em um banco de dados não-relacional
-* A API deve disponibilizar uma rota para listagem das tarefas e seu status (GET /todo)
-* A API deve fornecer uma rota para validar o funcionamento de seus componentes (GET /healthcheck)
+* A API deve persistir os dados em um banco de dados não-relacional WIP ( Atualmente em Postgresql )
+* A API deve disponibilizar uma rota para listagem das tarefas e seu status (GET /todo) WIP
+* A API deve fornecer uma rota para validar o funcionamento de seus componentes (GET /healthcheck) WIP
 
 ## Link para testes
 
