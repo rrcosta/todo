@@ -6,6 +6,6 @@ class ApplicationController < ActionController::Base
     start = Time.now
     yield
     duration = Time.now - start
-    Rails.logger.info "#{controller_name}##{action_name}: #{duration}s"
+    Rails.logger.info "collect_metrics -  controller_name: #{controller_name} Acao: #{action_name}: Tempo: #{duration}s"
   end
 end
