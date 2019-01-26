@@ -1,12 +1,12 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Itens com pendencia</h1><br>
+<h1>Itens com pendência</h1><br>
 
-  <table>
+  <table class="ui single line center table">
     <thead>
       <tr>
-        <th>Title</th>
-        <th>Description</th>
+        <th>Titulo</th>
+        <th>Descrição</th>
         <th>Status</th>
         <th colspan="3"></th>
       </tr>
@@ -15,9 +15,19 @@
     <tbody>
       <% @todo_lists.each do |todo_list| %>
         <tr>
-          <td><%= todo_list.title %></td>
-          <td><%= todo_list.description %></td>
-          <td><%= todo_list.status %></td>
+          <td class='truncate'><%= todo_list.title %></td>
+          <td class='truncate'><%= todo_list.description %></td>
+          <td>
+            <% if todo_list.status %>
+              <span class="ui green label">
+                Concluido
+              </span>
+            <% else %>
+              <span class="ui red label">
+                Pendente
+              </span>
+            <% end %>
+          </td>
           <td><%= link_to 'Show', todo_list %></td>
           <td><%= link_to 'Edit', edit_todo_list_path(todo_list) %></td>
           <td><%= link_to 'Destroy', todo_list, method: :delete, data: { confirm: 'Are you sure?' } %></td>
