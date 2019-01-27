@@ -1,17 +1,14 @@
 <div>
-  <div class="ui tree cards">
+  <div class="ui two cards">
     <div class="teal card">
       <div class="content">
         <div class="header">
-          Total de Requisições efetuadas
         </div>
         <div class="meta">
-          Retorna a quantidade total de requisições efetuadas
+          Retorna a quantidade de requisições por destino
         </div>
         <div class="description">
-          <span class="right floated">
-          98
-          </span>
+          <%= render 'qt_controllers' %>
         </div>
       </div>
     </div>
@@ -19,31 +16,12 @@
     <div class="blue card">
       <div class="content">
         <div class="header">
-          Total de Requisições efetuadas
         </div>
         <div class="meta">
-          Retorna a quantidade total de requisições efetuadas
+          Retorna a quantidade pelo tipo de ação
         </div>
         <div class="description">
-          <span class="right floated">
-          98
-          </span>
-        </div>
-      </div>
-    </div>
-
-    <div class="red card">
-      <div class="content">
-        <div class="header">
-          Total de Requisições efetuadas
-        </div>
-        <div class="meta">
-          Retorna a quantidade total de requisições efetuadas
-        </div>
-        <div class="description">
-          <span class="right floated">
-          98
-          </span>
+          <%= render 'qt_action' %>
         </div>
       </div>
     </div>
