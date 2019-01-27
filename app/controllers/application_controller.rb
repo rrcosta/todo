@@ -6,16 +6,20 @@ class ApplicationController < ActionController::Base
     start = Time.now
     yield
     duration = Time.now - start
+    view_runtime = @_view_runtime.blank? ? 0.00 : @_view_runtime
+    db_runtime = @_db_runtime.blank? ? 0.00 : @_db_runtime
+    
+    create_metric(controller_name, action_name, duration, view_runtime, db_runtime)
+  end
 
-    Rails.logger.info "collect_metrics -  controller_name: #{controller_name} Acao: #{action_name}: Tempo: #{duration}"
-
+  def create_metric(controller_name, action_name, duration, view_runtime, db_runtime)
     Metric.create(
       {
         controller_name: controller_name,
         action_name: action_name,
         time_process: duration,
-        view_runtime: @_view_runtime.blank? ? 0.00 : @_view_runtime,
-        db_runtime: @_db_runtime.blank? ? 0.00 : @_db_runtime
+        view_runtime: view_runtime,
+        db_runtime: db_runtime
       }
     )
   end
