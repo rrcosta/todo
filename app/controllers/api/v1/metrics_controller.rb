@@ -23,6 +23,12 @@ module Api
         render json: @metric
       end
 
+      def average_of_time_process
+        @metric = Metric.average_of_time
+        render json: @metric
+      end
+      
+
       private
 
       def set_metric
