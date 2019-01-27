@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   root 'todo_lists#index'
   
   resources :todo_lists
-  resources :metrics
+  resources :metrics, except: %i[edit destroy update create new]
 
   get 'pending', to: 'todo_lists#pending'
   get 'completed', to: 'todo_lists#completed'
@@ -14,6 +14,7 @@ Rails.application.routes.draw do
       get 'todo_pending'  , to: 'todo_lists#todo_pending'
       get 'todo_completed', to: 'todo_lists#todo_completed'
       
+      resources :metrics, only: %i[index show]
     end
   end
 end
