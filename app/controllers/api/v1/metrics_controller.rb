@@ -5,7 +5,7 @@ module Api
       skip_before_action :verify_authenticity_token
 
       def index
-        @metrics = Metric.all
+        @metrics = Metric.ordered.all
         render json: @metrics
       end
 

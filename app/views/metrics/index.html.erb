@@ -15,7 +15,7 @@
   </thead>
 
   <tbody>
-    <% @metrics.each do |metric| %>
+    <% @metrics.ordered.each do |metric| %>
       <tr>
         <td><%= metric.controller_name %></td>
         <td><%= metric.action_name %></td>
