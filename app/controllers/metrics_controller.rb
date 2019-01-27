@@ -13,12 +13,14 @@ class MetricsController < ApplicationController
   end
 
   private
+    def set_metric
+      @metric = Metric.find(params[:id])
+    end
 
-  def set_metric
-    @metric = Metric.find(params[:id])
-  end
-
-  def metric_params
-    params.require(:metric).permit(:controller_name, :action_name, :time_process, :view_runtime, :db_runtime)
-  end
+    def metric_params
+      params.require(:metric).permit(
+        :controller_name, :action_name, :time_process,
+        :view_runtime, :db_runtime
+      )
+    end
 end
