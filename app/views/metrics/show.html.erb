@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Controller name:</strong>
+  <%= @metric.controller_name %>
+</p>
+
+<p>
+  <strong>Action name:</strong>
+  <%= @metric.action_name %>
+</p>
+
+<p>
+  <strong>Time process:</strong>
+  <%= @metric.time_process %>
+</p>
+
+<p>
+  <strong>View runtime:</strong>
+  <%= @metric.view_runtime %>
+</p>
+
+<p>
+  <strong>Db runtime:</strong>
+  <%= @metric.db_runtime %>
+</p>
+
+<%= link_to 'Edit', edit_metric_path(@metric) %> |
+<%= link_to 'Back', metrics_path %>
