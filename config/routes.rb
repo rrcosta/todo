@@ -15,6 +15,8 @@ Rails.application.routes.draw do
       get 'todo_completed', to: 'todo_lists#todo_completed'
       
       resources :metrics, only: %i[index show]
+      get 'metric_of_controller_name', to: 'metrics#metric_of_controller_name'
+      get 'metric_of_action_name'    , to: 'metrics#metric_of_action_name'
     end
   end
 end
