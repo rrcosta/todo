@@ -10,10 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_24_172839) do
+ActiveRecord::Schema.define(version: 2019_01_27_164708) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "metrics", force: :cascade do |t|
+    t.string "controller_name"
+    t.string "action_name"
+    t.float "time_process"
+    t.float "view_runtime"
+    t.float "db_runtime"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "todo_lists", force: :cascade do |t|
     t.string "title"
