@@ -140,38 +140,7 @@ http://devopslab.com.br/como-instalar-e-configurar-o-the-foreman/
 
         $ rails s
 
-8. Após subir a aplicação, a mesma disponibilizará os [endpoints da API](http://localhost:3000/api/v1/todo_lists), assim como uma tela para Cadastro, Edição e deletar os registros dos mesmos itens, ou seja, temos um FrontEnd e uma API para iteragir com os dados.
-
-## Como acessar a aplicação via FrontEnd ?
-
-Para utilizarmos a aplicação temos a opção via FrontEnd [Navegador](http://localhost:3000), atraves da url http://localhost:3000
-
-## Como acessar a aplicação via API?
-
-Para utilizarmos a aplicação via API, podemos utilizar o [curl](https://curl.haxx.se) ou pelo client de API [Postman](https://www.getpostman.com)
-
-Endpoints disponíveis: 
-
-
-
-| nome da ação                             |  http_verb   |  Endpoint
-| ---------------------------------------- | ------------ | ------------------------------------- 
-| api_v1_todo_lists                        |   GET        | /api/v1/todo_lists(.:format)
-| api_v1_todo_lists                        |   POST       | /api/v1/todo_lists(.:format)
-| new_api_v1_todo_list                     |   GET        | /api/v1/todo_lists/new(.:format)
-| edit_api_v1_todo_list                    |   GET        | /api/v1/todo_lists/:id/edit(.:format)
-| api_v1_todo_list                         |   GET        | /api/v1/todo_lists/:id(.:format)
-| api_v1_todo_list                         |   PATCH      | /api/v1/todo_lists/:id(.:format)
-| api_v1_todo_list                         |   PUT        | /api/v1/todo_lists/:id(.:format)
-| api_v1_todo_list                         |   DELETE     | /api/v1/todo_lists/:id(.:format)
-| api_v1_todo_pending                      |   GET        | /api/v1/todo_pending(.:format)
-| api_v1_todo_completed                    |   GET        | /api/v1/todo_completed(.:format) 
-| api_v1_metrics                           |   GET        | /api/v1/todo_completed(.:format)
-| api_v1_metric                            |   GET        | /api/v1/metrics/:id(.:format)
-| api_v1_metric_controller_name            |   GET        | /api/v1/metric_controller_name(.:format)
-| api_v1_metric_action_name                |   GET        | /api/v1/metric_action_name(.:format)
-| api_v1_metric_average_of_time_process    |   GET        | /api/v1/metric_average_of_time_process(.:format)
-
+8. Após subir a aplicação, a mesma disponibilizará os [endpoints da API](http://localhost:3000/api/v1/todo_lists), assim como uma tela para Cadastro, Edição e remoção dos registros, ou seja, temos um FrontEnd e uma API para iteragir com os dados.
 
 
 ## Testes
@@ -191,3 +160,30 @@ Para executar os testes:
         ./coverage/index.html
 
 
+## Como acessar a aplicação via FrontEnd ?
+
+Para utilizarmos a aplicação temos a opção via FrontEnd [Navegador](http://localhost:3000), atraves da url http://localhost:3000
+
+## Como acessar a aplicação via API?
+
+Para utilizarmos a aplicação via API, podemos utilizar o [curl](https://curl.haxx.se) ou pelo client de API [Postman](https://www.getpostman.com)
+
+Endpoints disponíveis: 
+
+| nome da ação                             |  http_verb   |  Endpoint
+| ---------------------------------------- | ------------ | ------------------------------------- 
+| api_v1_todo_lists                        |   GET        | /api/v1/todo_lists(.:format)
+| api_v1_todo_lists                        |   POST       | /api/v1/todo_lists(.:format)
+| new_api_v1_todo_list                     |   GET        | /api/v1/todo_lists/new(.:format)
+| edit_api_v1_todo_list                    |   GET        | /api/v1/todo_lists/:id/edit(.:format)
+| api_v1_todo_list                         |   GET        | /api/v1/todo_lists/:id(.:format)
+| api_v1_todo_list                         |   PATCH      | /api/v1/todo_lists/:id(.:format)
+| api_v1_todo_list                         |   PUT        | /api/v1/todo_lists/:id(.:format)
+| api_v1_todo_list                         |   DELETE     | /api/v1/todo_lists/:id(.:format)
+| api_v1_todo_pending                      |   GET        | /api/v1/todo_pending(.:format)
+| api_v1_todo_completed                    |   GET        | /api/v1/todo_completed(.:format) 
+| api_v1_metrics                           |   GET        | /api/v1/todo_completed(.:format)
+| api_v1_metric                            |   GET        | /api/v1/metrics/:id(.:format)
+| api_v1_metric_controller_name            |   GET        | /api/v1/metric_controller_name(.:format)
+| api_v1_metric_action_name                |   GET        | /api/v1/metric_action_name(.:format)
+| api_v1_metric_average_of_time_process    |   GET        | /api/v1/metric_average_of_time_process(.:format)
