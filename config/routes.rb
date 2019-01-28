@@ -16,7 +16,7 @@ Rails.application.routes.draw do
       
       resources :metrics, only: %i[index show]
       get 'metric_controller_name'        , to: 'metrics#metric_of_controller_name'
-      get 'metric_of_action_name'         , to: 'metrics#metric_of_action_name'
+      get 'metric_action_name'            , to: 'metrics#metric_of_action_name'
       get 'metric_average_of_time_process', to: 'metrics#average_of_time_process'
     end
   end
