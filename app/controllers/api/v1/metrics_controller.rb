@@ -13,6 +13,22 @@ module Api
         render json: @metric
       end
 
+      def metric_of_controller_name
+        @metric = Metric.qt_controllers
+        render json: @metric
+      end
+
+      def metric_of_action_name
+        @metric = Metric.qt_action
+        render json: @metric
+      end
+
+      def average_of_time_process
+        @metric = Metric.average_of_time
+        render json: @metric
+      end
+      
+
       private
 
       def set_metric

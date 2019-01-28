@@ -1,0 +1,41 @@
+<h3 class="ui dividing header">
+  Tempo Médio por:
+</h3>
+
+<div class="ui four column stackable grid">
+  <div class="column">
+    <div class="ui teal raised segment">
+      <div class="ui">
+        <h4>Processamento das requisições </h4> 
+        <% unless @metrics.average_of_time.blank? %>
+          <%= @metrics.average_of_time %>        
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="ui blue raised segment">
+      <div class="ui">
+        <h4>Templates de visualização </h4> 
+        <% unless @metrics.average_of_view.blank? %>
+          <%= @metrics.average_of_view %>        
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="ui olive raised segment">
+      <div class="ui">
+        <h4>Leitura e Modificação ao B.D </h4> 
+        <% unless @metrics.average_of_bd.blank? %>
+          <%= @metrics.average_of_bd %>        
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<br>
+Tempos em milesegundos

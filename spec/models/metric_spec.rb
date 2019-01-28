@@ -20,5 +20,17 @@ RSpec.describe Metric, type: :model do
         expect(metrics_bd).to eql metrics_created
       end
     end
+
+    describe '.qt_controllers' do
+      it 'returns group by controller_name' do
+        expect(Metric.qt_controllers).to eql({})
+      end
+    end
+
+    describe '.qt_controllers' do
+      it 'returns group by controller_name' do
+        expect(Metric.qt_action).to eql({})
+      end
+    end
   end
 end

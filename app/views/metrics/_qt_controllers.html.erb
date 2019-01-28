@@ -1,0 +1,17 @@
+<%# <table class="ui very basic collapsing celled center table"> %>
+<table class="ui teal table">
+  <thead>
+    <tr>
+      <th class="sub header">Destino</th>
+      <th>Quantidade</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @metrics.qt_controllers.each do |name,qtd| %>
+      <tr>
+        <td><%= name %></td>
+        <td><%= qtd %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
