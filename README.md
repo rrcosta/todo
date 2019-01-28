@@ -11,9 +11,9 @@ API). (ex: GET, PUT, POST, DELETE /todo)
 Informações sobre a API:
 
 * Toda tarefa deve possuir um status (pending ou completed)
-* A API deve persistir os dados em um banco de dados não-relacional WIP ( Atualmente em Postgresql )
-* A API deve disponibilizar uma rota para listagem das tarefas e seu status (GET /todo) WIP
-* A API deve fornecer uma rota para validar o funcionamento de seus componentes (GET /healthcheck) WIP
+* A API deve persistir os dados em um banco de dados
+* A API deve disponibilizar uma rota para listagem das tarefas e seu status
+* A API deve fornecer uma rota para validar o funcionamento de seus componentes 
 
 ## Link para testes
 
@@ -128,21 +128,51 @@ http://devopslab.com.br/como-instalar-e-configurar-o-the-foreman/
 
 4. Abra o arquivo .env e coloque os seus dados de acesso do seu banco de dados Postgrsql
 
-5. Faça o setup do banco de dados
+5. Faça o setup do banco de dados: Criação do Banco de Dados
 
-        $ bin/rails db:setup
+        $ bin/rails db:create
 
-6. Instale o foreman
+6. Faça o setup do banco de dados: Criação das tabelas Banco de Dados
 
-        $ gem install foreman
+        $ bin/rails db:migrate
 
-7. Inicie a aplicação usando o foreman
+7. Inicie a aplicação usando o servidor local (Irá iniciar na porta padrão que é a 3000)
 
-        $ foreman start
+        $ rails s
 
-8. Acesse a aplicação
+8. Após subir a aplicação, a mesma disponibilizará os [endpoints da API](http://localhost:3000/api/v1/todo_lists), assim como uma tela para Cadastro, Edição e deletar os registros dos mesmos itens, ou seja, temos um FrontEnd e uma API para iteragir com os dados.
 
-9. Crie um webhook com a url desejada para enviar o conteudo d
+## Como acessar a aplicação via FrontEnd ?
+
+Para utilizarmos a aplicação temos a opção via FrontEnd [Navegador](http://localhost:3000), atraves da url http://localhost:3000
+
+## Como acessar a aplicação via API?
+
+Para utilizarmos a aplicação via API, podemos utilizar o [curl](https://curl.haxx.se) ou pelo client de API [Postman](https://www.getpostman.com)
+
+Endpoints disponíveis: 
+
+
+
+| nome da ação                             |  http_verb   |  Endpoint
+| ---------------------------------------- | ------------ | ------------------------------------- 
+| api_v1_todo_lists                        |   GET        | /api/v1/todo_lists(.:format)
+| api_v1_todo_lists                        |   POST       | /api/v1/todo_lists(.:format)
+| new_api_v1_todo_list                     |   GET        | /api/v1/todo_lists/new(.:format)
+| edit_api_v1_todo_list                    |   GET        | /api/v1/todo_lists/:id/edit(.:format)
+| api_v1_todo_list                         |   GET        | /api/v1/todo_lists/:id(.:format)
+| api_v1_todo_list                         |   PATCH      | /api/v1/todo_lists/:id(.:format)
+| api_v1_todo_list                         |   PUT        | /api/v1/todo_lists/:id(.:format)
+| api_v1_todo_list                         |   DELETE     | /api/v1/todo_lists/:id(.:format)
+| api_v1_todo_pending                      |   GET        | /api/v1/todo_pending(.:format)
+| api_v1_todo_completed                    |   GET        | /api/v1/todo_completed(.:format) 
+| api_v1_metrics                           |   GET        | /api/v1/todo_completed(.:format)
+| api_v1_metric                            |   GET        | /api/v1/metrics/:id(.:format)
+| api_v1_metric_controller_name            |   GET        | /api/v1/metric_controller_name(.:format)
+| api_v1_metric_action_name                |   GET        | /api/v1/metric_action_name(.:format)
+| api_v1_metric_average_of_time_process    |   GET        | /api/v1/metric_average_of_time_process(.:format)
+
+
 
 ## Testes
 
