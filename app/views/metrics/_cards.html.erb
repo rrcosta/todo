@@ -14,6 +14,11 @@
         <div class="description">
           <%= render 'qt_controllers' %>
         </div>
+        <br>
+        <div>
+        <br>
+          <%= pie_chart Metric.qt_controllers %>
+        </div>
       </div>
     </div>
 
@@ -26,6 +31,11 @@
         </div>
         <div class="description">
           <%= render 'qt_action' %>
+        </div>
+        <br>
+        <div>
+        <br>
+          <%= pie_chart Metric.qt_action %>
         </div>
       </div>
     </div>
