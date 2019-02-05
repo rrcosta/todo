@@ -16,6 +16,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'semantic-ui-sass'
 gem 'simple_form'
 gem 'lograge', '0.10.0'
+gem 'chartkick'
 
 group :development, :test do
   gem 'pry'
