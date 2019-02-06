@@ -1,11 +1,8 @@
 <p id="notice"><%= notice %></p>
 <br>
 
-<div class="right aligned">
 <%= link_to 'Back', metrics_path %>
-</div>
-
-<br>
+<br><br><br>
 
 <div class="ui one column grid">
   <div class="column">
@@ -77,3 +74,14 @@
     </div>
   </div>
 </div>
+
+<br><br>
+<div class='graphics'>
+  <%= pie_chart(
+    {
+      "db"   => @metric.db_runtime,
+                  "View" => @metric.view_runtime
+                }, colors: ["#7ABDD4","#A2F6A2", "#525e46"]
+  ) %>
+</div>
+<br><br>
