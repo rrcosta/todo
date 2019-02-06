@@ -17,7 +17,9 @@
         <br>
         <div>
         <br>
-          <%= pie_chart Metric.qt_controllers %>
+          <%= pie_chart Metric.qt_controllers,
+              colors: ["#71cfae", "#73F273", "#A2F6A2", "#005500"]
+          %>
         </div>
       </div>
     </div>
@@ -35,7 +37,9 @@
         <br>
         <div>
         <br>
-          <%= bar_chart Metric.qt_action %>
+          <%= bar_chart Metric.qt_action,
+              colors: [ "#7ABDD4","#A2F6A2"]
+          %>
         </div>
       </div>
     </div>
