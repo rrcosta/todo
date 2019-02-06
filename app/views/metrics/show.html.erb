@@ -1,28 +1,87 @@
 <p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Controller name:</strong>
-  <%= @metric.controller_name %>
-</p>
-
-<p>
-  <strong>Action name:</strong>
-  <%= @metric.action_name %>
-</p>
-
-<p>
-  <strong>Time process:</strong>
-  <%= @metric.time_process %>
-</p>
-
-<p>
-  <strong>View runtime:</strong>
-  <%= @metric.view_runtime %>
-</p>
-
-<p>
-  <strong>Db runtime:</strong>
-  <%= @metric.db_runtime %>
-</p>
+<br>
 
 <%= link_to 'Back', metrics_path %>
+<br><br><br>
+
+<div class="ui one column grid">
+  <div class="column">
+    <div class="ui cards">
+      <div class="teal card">
+        <div class="content">
+          <div class="header"></div>
+          <div class="meta">Controller name</div>
+          <div class="center aligned description">
+            <h2>
+              <strong><%= @metric.controller_name %></strong>
+            </h2>
+          </div>
+        </div>
+      </div>
+
+      <div class="blue card">
+        <div class="content">
+          <div class="header"></div>
+          <div class="meta">Action name:</div>
+          <div class="center aligned description">
+            <h2>
+              <strong><%= @metric.action_name %></strong>
+            </h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="ui cards">
+
+      <div class="olive card">
+        <div class="content">
+          <div class="header"></div>
+          <div class="meta">Time process</div>
+          <div class="description">
+            <h4>
+              <strong><%= @metric.time_process %></strong>
+            </h4>
+          </div>
+        </div>
+      </div>
+
+      <div class="olive card">
+        <div class="content">
+          <div class="header"></div>
+          <div class="meta">View Run Time</div>
+          <div class="description">
+            <h4>
+              <%= @metric.view_runtime %>
+            </h4>
+          </div>
+        </div>
+      </div>
+
+      <div class="olive card">
+        <div class="content">
+          <div class="header"></div>
+          <div class="meta">Db Run Time</div>
+          <div class="description">
+            <h4>
+              <%= @metric.db_runtime %>
+            </h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<br><br>
+<div class='graphics'>
+  <%= pie_chart(
+    {
+      "db"   => @metric.db_runtime,
+                  "View" => @metric.view_runtime
+                }, colors: ["#7ABDD4","#A2F6A2", "#525e46"]
+  ) %>
+</div>
+<br><br>
