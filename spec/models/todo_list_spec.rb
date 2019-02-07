@@ -46,6 +46,15 @@ RSpec.describe TodoList, type: :model do
       end
     end
 
+    describe 'group_by_status' do
+      let!(:todo_true) { create(:todo_list, status: :true) }
+
+      it 'returns the number of status' do
+        expect(
+          described_class.group_by_status
+        ).to eql( {true=>1})
+      end
+    end
 
   end
 end
