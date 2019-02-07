@@ -7,7 +7,9 @@
     
     <div class="left floated right aligned wide column">
       <div>
-        <%= pie_chart TodoList.group_by_status, colors: ["#DB2828", "#73F273", "#72b1ae"], label: "Status", height: "180px" %>
+        <%= pie_chart @statics, colors: ["#DB2828", "#73F273", "#72b1ae"],
+                                label: "Status", height: "180px"
+        %>
       </div>
     </div>
 

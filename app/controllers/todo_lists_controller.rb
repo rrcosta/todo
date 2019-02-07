@@ -5,6 +5,7 @@ class TodoListsController < ApplicationController
   # GET /todo_lists.json
   def index
     @todo_lists = TodoList.all
+    @statics = static_for_graphics
   end
 
   def pending
@@ -70,6 +71,15 @@ class TodoListsController < ApplicationController
   end
 
   private
+    def static_for_graphics
+      static = TodoList.group_by_status
+
+      static['pendente']  = static.delete(false) if static[false]
+      static['concluido'] = static.delete(true)  if static[true]
+
+      return static
+    end
+
     # Use callbacks to share common setup or constraints between actions.
     def set_todo_list
       @todo_list = TodoList.find(params[:id])
